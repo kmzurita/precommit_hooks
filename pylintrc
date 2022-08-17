@@ -1,0 +1,14 @@
+[VARIABLES]
+# Tells whether unused global variables should be treated as a violation.
+allow-global-unused-variables=no
+
+# Tells whether we should check for unused import in __init__ files.
+init-import=yes
+
+[SIMILARITIES]
+
+# Ignore comments when computing similarities.
+ignore-comments=yes
+
+# Ignore docstrings when computing similarities.
+ignore-docstrings=yes

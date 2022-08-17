@@ -1,0 +1,41 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: check-ast
+    -   id: check-byte-order-marker
+    -   id: check-case-conflict
+    -   id: check-merge-conflict
+    -   id: check-docstring-first
+    -   id: check-executables-have-shebangs
+    -   id: check-json
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: mixed-line-ending
+
+-   repo: local
+    hooks:
+      -   id: pylint
+          name: pylint
+          entry: pylint
+          language: system
+          types: [python]
+          args:
+            [
+              "-rn",
+              "-sn",
+              "--rcfile=pylintrc",
+              "--load-plugin=pylint.extensions.docparams"
+            ]
+
+-   repo: https://github.com/psf/black
+    rev: 20.8b1
+    hooks:
+    -   id: black
+
+-   repo: https://github.com/asottile/blacken-docs
+    rev: v1.8.0
+    hooks:
+    -   id: blacken-docs
+        additional_dependencies: [black==20.8b1]
